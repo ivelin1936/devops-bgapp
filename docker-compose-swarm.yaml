@@ -1,7 +1,7 @@
 version: "3.8"
 services:
     web:
-        image: shekeriev/bgapp-web
+        image: ivelin1936/bgapp-web
         deploy:
             replicas: 5
         ports:
@@ -11,7 +11,7 @@ services:
         networks:
             - app-network
     db:
-        image: shekeriev/bgapp-db
+        image: ivelin1936/bgapp-db
         networks:
             - app-network
         environment:
