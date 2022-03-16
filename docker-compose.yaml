@@ -12,6 +12,7 @@ services:
             - app-network
         depends_on:
             - db
+        restart: always
     db:
         build:
             context: .
@@ -20,5 +21,6 @@ services:
             - app-network
         environment:
             MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+        restart: always
 networks:
     app-network:
