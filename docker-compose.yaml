@@ -4,7 +4,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.web
-        image: ivelin1936/m5_web
+#         image: ivelin1936/m5_web
         ports:
             - 8080:80
         volumes:
@@ -18,7 +18,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.db
-        image: ivelin1936/m5_db
+#         image: ivelin1936/m5_db
         networks:
             - app-network
         environment:
