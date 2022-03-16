@@ -1,7 +1,7 @@
 version: "3.7"
 services:
     web:
-        image: ivelin1936/m5_web
+        image: "${DO_HUB_USR}/m5_web"
         ports:
             - 80:80
         volumes:
@@ -12,7 +12,7 @@ services:
             - db
         restart: always
     db:
-        image: ivelin1936/m5_db
+        image: "${DO_HUB_USR}/m5_db"
         networks:
             - m5-network
         environment:
