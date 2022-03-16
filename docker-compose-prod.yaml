@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+    web:
+        image: ivelin1936/m5_web
+        ports:
+            - 80:80
+        volumes:
+            - "${PROJECT_ROOT}:/var/www/html:ro"
+        networks:
+            - m5-network
+        depends_on:
+            - db
+        restart: always
+    db:
+        image: ivelin1936/m5_db
+        networks:
+            - m5-network
+        environment:
+            MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+        restart: always
+networks:
+    m5-network:
