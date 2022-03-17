@@ -1,7 +1,7 @@
 version: "3.7"
 services:
     web:
-        image: "${DO_HUB_USR}/m5_web"
+        image: "${DO_HUB_USR}/${WEB_IMG}"
         ports:
             - 80:80
         volumes:
@@ -12,7 +12,7 @@ services:
             - db
         restart: always
     db:
-        image: "${DO_HUB_USR}/m5_db"
+        image: "${DO_HUB_USR}/${DB_IMG}"
         networks:
             - m5-network
         environment:
